@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>JmesPath.Net is a fully compliant JMESPATH parser (source-only package).</Description>
+    <AssemblyTitle>JmesPath.Net.SourceOnly</AssemblyTitle>
+    <VersionPrefix>42.43.44-preview-01</VersionPrefix>
+    <Authors>Jeremie Devillard;Maxime Labelle;Stef Heyenrath</Authors>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <AssemblyName>JmesPath.Net.SourceOnly</AssemblyName>
+    <PackageId>JmesPath.Net.SourceOnly</PackageId>
+    <PackageTags>jmespath;json;source-only</PackageTags>
+    <PackageProjectUrl>https://github.com/StefH/JmesPath.Net</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+
+    <!-- Source-only package properties -->
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>contentFiles</ContentTargetFolders>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content
+        Include="../jmespath.net/**/*.cs"
+        Exclude="../jmespath.net/**/AssemblyInfo.cs;../jmespath.net/bin/**/*.cs;../jmespath.net/obj/**/*.cs">
+      <Pack>true</Pack>
+      <PackagePath>contentFiles\cs\any\JmesPath\jmespath.net\%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
+      <BuildAction>Compile</BuildAction>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+
+    <Content
+        Include="../jmespath.net.interop/**/*.cs"
+        Exclude="../jmespath.net.interop/**/AssemblyInfo.cs;../jmespath.net.interop/bin\**\*.cs;../jmespath.net.interop/obj\**\*.cs">
+      <Pack>true</Pack>
+      <PackagePath>contentFiles\cs\any\JmesPath\jmespath.net.interop\%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
+      <BuildAction>Compile</BuildAction>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+
+    <Content
+        Include="../jmespath.net.parser/**/*.cs"
+        Exclude="../jmespath.net.parser/**/AssemblyInfo.cs.cs;../jmespath.net.parser/IJmesPathGenerator.cs;../jmespath.net.parser/bin/**/*.cs;../jmespath.net.parser/obj/**/*.cs;../jmespath.net.parser/net13/**">
+      <Pack>true</Pack>
+      <PackagePath>contentFiles\cs\any\JmesPath\jmespath.net.parser\%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
+      <BuildAction>Compile</BuildAction>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

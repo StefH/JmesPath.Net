@@ -3,7 +3,8 @@
   <PropertyGroup>
     <Description>JmesPath.Net is a fully compliant JMESPATH parser (source-only package).</Description>
     <AssemblyTitle>JmesPath.Net.SourceOnly</AssemblyTitle>
-    <VersionPrefix>1.0.330-preview-01</VersionPrefix>
+    <VersionPrefix>1.0.330</VersionPrefix>
+    <VersionSuffix>20260213.1</VersionSuffix>
     <Authors>Jeremie Devillard;Maxime Labelle;Stef Heyenrath</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <AssemblyName>JmesPath.Net.SourceOnly</AssemblyName>

@@ -3,14 +3,15 @@
   <PropertyGroup>
     <Description>JmesPath.Net core language parser</Description>
     <AssemblyTitle>JmesPath.Net.Parser</AssemblyTitle>
-    <Authors>Jeremie Devillard;Maxime Labelle;Atif Aziz</Authors>
-    <VersionPrefix>42.43.44</VersionPrefix>
-    <TargetFrameworks>netstandard2.1;netstandard1.3;net45</TargetFrameworks>
+    <Authors>Jeremie Devillard;Maxime Labelle;Atif Aziz;Stef Heyenrath</Authors>
+    <VersionPrefix>1.0.330</VersionPrefix>
+    <VersionSuffix>20260213.1</VersionSuffix>
+    <TargetFrameworks>netstandard2.1;netstandard2.0</TargetFrameworks>
     <AssemblyName>JmePath.Net.Parser</AssemblyName>
     <AssemblyOriginatorKeyFile>../jmespath.net.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
     <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
-    <PackageId>JmesPath.Net.Parser</PackageId>
+    <PackageId>Stef.JmesPath.Net.Parser</PackageId>
     <PackageTags>jmespath;json</PackageTags>
     <PackageProjectUrl>https://github.com/jdevillard/JmesPath.Net</PackageProjectUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
@@ -19,6 +20,11 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
   <ItemGroup>
     <YaccFile Include="JmesPathParser.y">
       <OutputFile>JmesPathParser.g.cs</OutputFile>
@@ -44,7 +50,7 @@
   </ItemGroup>
  
   <ItemGroup>
-    <PackageReference Include="YaccLexTools" Version="1.2.2" PrivateAssets="All" />
+    <PackageReference Include="YaccLexTools" Version="1.2.3" PrivateAssets="All" />
   </ItemGroup>
 
   <Target Name="_RestoreDotnetCliTool" Inputs="JmesPathScanner.lex;JmesPathParser.y" Outputs="JmesPathScanner.g.cs;JmesPathParser.g.cs">

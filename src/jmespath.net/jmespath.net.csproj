@@ -3,14 +3,15 @@
   <PropertyGroup>
     <Description>JmesPath.Net is a fully compliant JMESPATH parser.</Description>
     <AssemblyTitle>JmesPath.Net</AssemblyTitle>
-    <VersionPrefix>42.43.44</VersionPrefix>
-    <Authors>Jeremie Devillard;Maxime Labelle</Authors>
-    <TargetFrameworks>netstandard2.1;netstandard1.3;net45</TargetFrameworks>
+    <VersionPrefix>1.0.330</VersionPrefix>
+    <VersionSuffix>20260213.1</VersionSuffix>
+    <Authors>Jeremie Devillard;Maxime Labelle;Stef Heyenrath</Authors>
+    <TargetFrameworks>netstandard2.1;netstandard2.0</TargetFrameworks>
     <AssemblyName>JmesPath.Net</AssemblyName>
     <AssemblyOriginatorKeyFile>../jmespath.net.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
     <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
-    <PackageId>JmesPath.Net</PackageId>
+    <PackageId>Stef.JmesPath.Net</PackageId>
     <PackageTags>jmespath;json</PackageTags>
     <PackageProjectUrl>https://github.com/jdevillard/JmesPath.Net</PackageProjectUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
@@ -20,8 +21,12 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.3'">
